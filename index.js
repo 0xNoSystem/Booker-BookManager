@@ -62,9 +62,12 @@ function calc_averageRating(lib){
         ratings.push(b.rating)}
     })
 
+    if (getAvrg(ratings) === 'NaN'){
+        console.log('Average Rating not Returned')
+    }else{
     return getAvrg(ratings);
-        
-}
+        };     
+};
 
 //get unique authors count in MYLIB
 async function getAuthors(lib){
