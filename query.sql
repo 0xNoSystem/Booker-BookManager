@@ -14,3 +14,10 @@ CREATE TABLE notes(
     comment VARCHAR(255),
     book_id INTEGER REFERENCES book(id)
 );
+
+
+DELETE FROM books AS t1
+USING books AS t2
+WHERE t1.name = t2.name
+  AND t1.author = t2.author
+  AND t1.id > t2.id;
