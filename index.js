@@ -77,7 +77,7 @@ async function getAuthors(lib){
         authors.push(b.author)})
 
     const uniqueAuthors= [...new Set(authors)]
-    console.log(uniqueAuthors);
+    
     return uniqueAuthors
 }
 
