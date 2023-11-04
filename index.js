@@ -5,13 +5,14 @@ import pg from 'pg';
 const app = express();
 const port = 3000;
 
-const db = new pg.Client({
+/*const db = new pg.Client({
     user:'postgres',
     host:'localhost',
     database:'booker',
-    password:'371111',
+    password:'12345',
     port:5432
-});
+});*/
+
 db.connect();
 
 app.set('view engine','ejs');
