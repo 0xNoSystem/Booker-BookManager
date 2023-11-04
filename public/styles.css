@@ -1,0 +1,207 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #312B59;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-flex {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  padding-bottom: 10;
+}
+.nav-flex .brand-cus {
+  margin-left: 3%;
+  font-family: Maharlika, serif;
+  font-weight: bold;
+}
+.nav-flex .brand-cus h1 {
+  color: #FFDE59;
+  font-size: 2.5rem;
+}
+.nav-flex .search-bar {
+  padding-bottom: 15px;
+}
+.nav-flex .search-bar input {
+  margin: 0;
+  padding: 5px;
+  border: 1px solid gray;
+  height: 32px;
+}
+.nav-flex .search-bar button {
+  background-color: #312B59;
+  color: white;
+  border: none;
+  border-radius: 5%;
+  height: 35px;
+  width: 40px;
+}
+.nav-flex .search-bar form:hover { /* Change the background color on hover */
+  transform: scale(1); /* Slightly scale up on hover for a modern effect */
+}
+.nav-flex .search-bar form:hover input {
+  box-shadow: 1px 1px 2px 2px #312B59;
+  border: none;
+}
+.nav-flex .search-bar form:hover button:hover {
+  background-color: #FFDE59;
+}
+.nav-flex .nav-options {
+  display: flex;
+  flex-direction: row;
+  margin-right: 5%;
+  font-family: "DM Sans", sans-serif;
+}
+.nav-flex .nav-options a {
+  color: black;
+  text-decoration: none;
+  margin-right: 8px;
+}
+.nav-flex .nav-options a h3 {
+  font-size: 1.2rem;
+  padding: 5px;
+}
+.nav-flex input:focus {
+  border-width: 2px;
+  border-color: #FFDE59; /* Change the border color when the input is focused */
+}
+
+.mylib-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.mylib-container .mylib-header {
+  padding-top: 30px;
+  display: flex;
+  color: white;
+  font-family: "DM Sans", sans-serif;
+  align-items: center;
+}
+.mylib-container .mylib-header h1 {
+  font-size: 3rem;
+  display: flex;
+  font-family: "DM Sans", sans-serif;
+}
+.mylib-container .mylib-header #vertical-rule {
+  height: 100px;
+  background-color: white;
+  width: 2px;
+  margin-left: 30px;
+}
+.mylib-container .mylib-header #mylib-stats {
+  margin-left: 5%;
+}
+.mylib-container .mylib-header #mylib-stats .mylib-stat {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+  margin-right: 10px;
+  letter-spacing: 1px;
+}
+.mylib-container .mylib-header #mylib-stats .mylib-stat h4 {
+  text-wrap: nowrap;
+}
+.mylib-container .mylib-header #mylib-stats .mylib-stat span {
+  margin-bottom: 7px;
+  margin-left: 5%;
+  margin-right: 5px;
+  font-size: 2rem;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.books-display-container {
+  margin-top: 50px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.books-display-container .book-item {
+  color: white;
+}
+.books-display-container .book-item .book-title {
+  color: white;
+  font-size: 1.2rem;
+  font-family: "DM Sans", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+  text-decoration: none;
+  padding-top: 30px;
+}
+.books-display-container .book-item .book-author {
+  color: white;
+  font-size: 1.2rem;
+  font-family: "DM Sans", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+  text-decoration: none;
+  font-weight: bolder;
+}
+.books-display-container .book-item a:hover img {
+  transition: 0.2s;
+  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0px 5px 20px 0px white;
+  margin-top: 4px;
+}
+.books-display-container .book-item a:hover .book-author {
+  color: #FFDE59;
+  transition: 0.2s;
+  transform: scale(1.05);
+}
+.books-display-container .book-item a:hover .book-title {
+  color: #FFDE59;
+  transition: 0.2s;
+  transform: scale(1.05);
+}
+
+.mylib-row {
+  padding-bottom: 50px;
+}
+
+.first-row {
+  padding-top: 50px;
+}
+
+#mylib-empty {
+  padding-top: 50px;
+  color: white;
+  font-family: Maharlika, serif;
+}
+
+.no-matches {
+  padding-top: 50px;
+  color: white;
+  font-family: Maharlika, serif;
+}
+
+svg:hover {
+  transform: scale(1.08);
+}
+
+.foot {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.84);
+}
+
+footer hr {
+  height: 2px;
+  background-color: #312B59;
+  width: 900px;
+}/*# sourceMappingURL=styles.css.map */
+

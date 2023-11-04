@@ -1,0 +1,54 @@
+<%-include ('partials/header.ejs')%>
+<div class="books-display-container">
+<%if(locals.searchMatches.length === 0){%>
+
+    <h1 class="no-matches">No Match Found</h1>
+    </div>
+
+<%}else{%>
+    
+    <div class="container text-center">
+        <h1 class="no-matches">Relevant Matches:  <%=searchMatches.length%></h1>
+        <% for(let book of searchMatches){if(searchMatches.indexOf(book)%3===0){%>
+            <%if (searchMatches.indexOf(book) !== 0){%>
+            </div><%}%>
+            <div class="row align-items-start mylib-row first-row">
+         <%}%>   
+            <div class="book-item col">
+            <div class="book-rating"><h3><%if (book.finished_reading || book.currently_reading){%>
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#FFDE59" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+              </svg>
+
+              <%}else{%><form class='add-button' action="/add/<%=book.id%>" method="post">
+                <input type="hidden" name="addedBookId" value="<%=book.id%>">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#FFDE59" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+              </svg>
+            </form><%}%>
+        </h3>
+              
+            </div>
+            <a href="/book/<%=book.id%>"><img src='/assets/images/<%= book.img_paths%>'>
+                <h3 class="book-title"><%= book.name%></h3>
+                <h4 class="book-author">by <%= book.author%></h4></a>
+            </div>
+            
+            <%}%>
+        </div>
+        <%}%>
+      </div>
+    </div>
+    
+    <%-include('partials/footer.ejs')%>
+
+  </body>
+</html>
+    <script>
+        const myForm = document.querySelectorAll('.add-button');
+        console.log(myForm);
+        myForm.forEach(f=>{
+        f.addEventListener('click',function(){
+                f.submit()})})
+    </script>
