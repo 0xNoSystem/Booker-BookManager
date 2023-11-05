@@ -4,7 +4,7 @@ Welcome to Booker, a simple books library manager to keep track of the book you 
 
 I imported the main dataset of books and covers info (25000+ book) from Kaggle, cleaned the csv file to my preference (link to original dataset: https://www.kaggle.com/datasets/lukaanicin/book-covers-dataset/)
 
-##Stack:
+## Stack:
   What i've used to build this app:
   -nodeJS / ExpressJs
   -EJS for rendering
@@ -18,16 +18,16 @@ After you clone this repo locally, you should have this look:
 ![image](https://github.com/0xNoSystem/Booker-BookManager/assets/141743613/646c5f68-da0d-41fc-912f-0bc3dc76f103)
 I'm using VScode.
 
-#FIRST: Database Set-up
+# FIRST: Database Set-up
 
 I'm using PostgreSQL with pgAdmin4, supposing you have those on your machine, your next steps are:
 
-##1.create database 
+## 1.create database 
 
 ![image](https://github.com/0xNoSystem/Booker-BookManager/assets/141743613/14b2eeab-3211-46f7-92db-9b9195284722)
 You can name the database whatever you want, just make sure you use the same name when setting up the connection to the DB using NodeJS.
 
-##2.Create BOOKS and NOTES tables
+## 2.Create BOOKS and NOTES tables
 
 In the query.sql file you will find the SQL queries you need to create the tables, don't change anything about them as that might lead to some problems we don't want.
 
@@ -47,6 +47,29 @@ Steps:
 
   Next we just need to set the columns we want to import (name,author,image,img_paths)
   ![image](https://github.com/0xNoSystem/Booker-BookManager/assets/141743613/7508cc5d-db77-43cb-89e3-b5532b67d9aa)
+
+  And finally, this is optional, to remove duplicated boos from the database (there are some), you can run the third query from query.sql in your postgres database.
+  ![image](https://github.com/0xNoSystem/Booker-BookManager/assets/141743613/38b9fc6e-9a47-4180-a5c5-dbe7e6ad5a1a)
+
+
+# SECOND:
+
+  Go into **index.js** to setup the connection to the postgres DB.
+
+  
+  
+
+
+
+# THIRD:
+
+Run $ npm i express body-parser pg in your terminal,  make sure you're in the project directory.
+![image](https://github.com/0xNoSystem/Booker-BookManager/assets/141743613/7dc13ba9-df30-46c2-b4c3-86e45ee50755)
+
+
+
+
+
 
 
 
