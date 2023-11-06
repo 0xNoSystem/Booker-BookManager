@@ -1,6 +1,6 @@
 # Booker-BookManager
 
-Welcome to Booker, a simple books library manager to keep track of the book you are reading/finished reading.
+Welcome to Booker, a simple books library manager to keep track of the books you are reading/finished reading.
 
 I imported the main dataset of books and covers info (25000+ book) from Kaggle, cleaned the csv file to my preference (link to original dataset: https://www.kaggle.com/datasets/lukaanicin/book-covers-dataset/)
 
