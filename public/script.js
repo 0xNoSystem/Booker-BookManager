@@ -2,7 +2,7 @@
 const inputElement = document.createElement('input');
 inputElement.setAttribute('type','hidden');
 inputElement.setAttribute('value','');
-inputElement.setAttribute('name','bookId');
+inputElement.setAttribute('name','rating');
 
 //get bookId (I chose a random element)
 const bookId = document.querySelector('.set-rating').getAttribute('type');
@@ -110,8 +110,9 @@ newNoteButton.addEventListener('click',function(){
 
 
     const header = document.createElement('h2');
-    header.innerHTML = `${svgString_x} New Note `
+    header.innerHTML = `${svgString_x} <h5>New Note</h5> `
 
+    
     const formElement = document.createElement('form');
     formElement.setAttribute('id','new-note-form');
     formElement.setAttribute('action',`/edit/${bookId}`);
@@ -212,4 +213,24 @@ changeStatusAnchor.addEventListener('click',function(){
   changeStatusAnchor.parentNode.replaceChild(dropdown,changeStatusAnchor);
 
 })
+
+
+
+const logoutButton = document.getElementById('logout');
+const logoutForm = document.getElementById('logout-form');
+
+logoutButton.addEventListener('click', function(){
+  logoutForm.submit();
+})
+
+
+
+window.onbeforeunload = function() {
+  sessionStorage.setItem("scrollPosition", window.scrollY || document.documentElement.scrollTop);
+};
+window.onload = function() {
+  if (sessionStorage.getItem("scrollPosition") !== null) {
+      window.scrollTo(0, parseInt(sessionStorage.getItem("scrollPosition")));
+  }
+};
 
