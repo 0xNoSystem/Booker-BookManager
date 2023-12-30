@@ -46,7 +46,7 @@ async function getBook(bookId, userId, db, db2){
         const notes = await db.find({user_id:userId, book_id: bookId},{body:1});
         return notes
     }catch(e){
-        console.log(e.message)
+        console.log(e.message);
     }
 
   }
@@ -54,7 +54,7 @@ async function getBook(bookId, userId, db, db2){
 function getAvrg(array){
     let sum = 0.0;
     for (const num of array){
-        sum += num
+        sum += num;
     }
     return (sum/array.length).toFixed(2)
 }
@@ -65,13 +65,12 @@ function calc_averageRating(lib){
     books.forEach(b=>{
         if(b.rating){
         ratings.push(b.rating)}
-    })
+    });
 
-    if (getAvrg(ratings) === 'NaN'){
-        console.log('Average Rating not Returned')
-    }else{
-    return getAvrg(ratings) || 0;
-        };     
+
+    if (getAvrg(ratings) !== 'NaN'){
+        return getAvrg(ratings) || 0;
+    };  
 };
 
 
@@ -96,7 +95,7 @@ async function searchBooks_db(userInput,userId, db, db2 /*User*/) {
     const userBooks_id = [];
     
     userBooks.forEach(b=> userBooks_id.push(b.book_id.toString()))
-    console.log(userBooks_id);
+    
 
     try {
         const relevantBooks = await db.find({
@@ -124,7 +123,6 @@ async function searchBooks_db(userInput,userId, db, db2 /*User*/) {
             }
             
         })
-        console.log(result);
 
         return result;
     } catch (error) {
@@ -135,7 +133,7 @@ async function searchBooks_db(userInput,userId, db, db2 /*User*/) {
 
 
 async function addBookToUser(userId, bookId, db/*User*/){
-    console.log("i'm in addBookToUser()" )
+    
     try{
         const user = await db.findOne({'_id': userId});
         user.addBook(bookId);

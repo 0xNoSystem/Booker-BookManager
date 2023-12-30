@@ -1,7 +1,6 @@
 import mongoose from 'mongoose'
 import passportLocalMongoose from 'passport-local-mongoose'
 
-
 const ObjectId = mongoose.Types.ObjectId;
 
 const userSchema = new mongoose.Schema({

@@ -168,6 +168,7 @@ notesList.forEach(n=>{
   n.addEventListener('mouseover',function(){
     const noteId = n.getAttribute('id');
     trashIcon.setAttribute('action',`/delete/${noteId}`)
+    trashIcon.setAttribute('method','post');
     
     n.appendChild(trashIcon);
     trashIcon.addEventListener('click',function(){

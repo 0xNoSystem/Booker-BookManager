@@ -63,7 +63,7 @@ app.get('/register', (req,res)=>{
         res.render('register')
     }catch(e){
         console.log(e);
-        res.send('<h1>Page could not be rendered, try again </h1>')
+        res.send('<h1>Page could not be rendered, try again </h1>');
     }
 })
 
@@ -110,11 +110,16 @@ app.get('/book/:id', async (req,res)=>{
     const notes = await getNotes(userId, bookId, Note);
     
     const bookToRender = await getBook(bookId, userId, User, Book)
-    console.log(bookToRender)
+    if (bookToRender !== undefined){
     res.render('book.ejs',{
         book: bookToRender,
         notes: notes
-    })}else{
+    }
+        )}else{
+            res.redirect('/home');
+        }
+
+    }else{
         res.redirect('/')
     }
 })
@@ -240,7 +245,7 @@ app.post('/edit/:id',async (req,res)=>{
 })
 
 
-app.get('/delete/:noteId',async (req,res)=>{
+app.post('/delete/:noteId',async (req,res)=>{
 
     if (req.isAuthenticated()){
         const noteId = req.params.noteId;
