@@ -188,8 +188,6 @@ app.post('/search', async (req,res)=>{
 }}
 ) 
 
-
-
 app.post('/add/:id', async (req,res)=>{
     if (req.isAuthenticated()){
         const bookId = new ObjectId(req.params.id);
@@ -209,7 +207,7 @@ app.post('/edit/:id',async (req,res)=>{
         console.log(bookId);
         if (req.body.rating){
         const rating = req.body.rating;
-        //edit rating
+        
         req.user.updateRating(bookId, rating);
         }
         
