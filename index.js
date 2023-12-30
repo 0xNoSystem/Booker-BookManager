@@ -28,7 +28,7 @@ app.use(passport.initialize());
 app.use(passport.session())
 
 try{
-    await mongoose.connect('mongodb+srv://0xNoSystem:PGE29wrye95MJkUH@cluster0.isldf5q.mongodb.net/booker?retryWrites=true&w=majority')
+    await mongoose.connect(process.env.MONGODB_URI,)
     console.log('Mongoose set up.');
   }catch(error){
     console.log(error.message)
