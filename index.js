@@ -11,7 +11,7 @@ import { getBooks, getBook, getNotes, calc_averageRating, getAuthors, searchBook
 const ObjectId = mongoose.Types.ObjectId;
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000 ;
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
@@ -267,6 +267,6 @@ app.post('/delete/:noteId',async (req,res)=>{
 
 
 
-app.listen(port,(req,res)=>{
+app.listen(port,() =>{
     console.log(`Server listening on port ${port}`)
 });
