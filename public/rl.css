@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    background-color: #312B59;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    
+    align-items: center;
+    background-color: #312B59;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #312B59;
+    
+}
+
+
+.register-block{
+    color: #312B59;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    background-color:  #FFDE59;
+    box-shadow: 5px 5px 5px 2px grey;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 5%;
+    transform: scale(0.8);
+}
+
+.email{
+    margin-bottom: 5px;
+}
+
+.email input{
+    margin-left: 33px;
+}
+
+.password .input{
+    margin-left: 8px;
+}
+
+.submit-butt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+}
+
+.submit-butt input{
+    background-color: rgb(0, 128, 255);
+    font-size: 0.8rem;
+    border: 2px;
+    padding: 3px;
+    color: white;
+    box-shadow: 1px 1px 1px 1px grey;
+    font-weight: 600;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.submit-butt input:hover{
+    
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+#header{
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 35px;
+    font-family: maharlika, sans-serif;
+    color: aliceblue;
+}
+
+#header h1{
+    font-size: 4rem;
+    padding: 0;
+}
+
+#header h3{
+    font-size: 1rem ;
+    color: #FFDE59;
+}
+
+.register-block h2{
+    margin-bottom: 15px;
+}
+
+.login{
+    width: 90%;
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    top: 30px;
+    
+}
+
+.button-container{
+    width: fit-content;
+    align-self: end;
+}
+
+.button-container button{
+    background-color: rgb(0, 128, 255);
+    font-size: 1.1rem;
+    border: 2px;
+    padding: 6px;
+    color: white;
+    
+    font-weight: 600;
+    height: 40px;
+    border-radius: 10px;
+}
+.button-container button:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+#login-butt{
+    background-color: aliceblue;
+    color: #312B59;
+    font-weight: 300;
+}
+
+#register-butt{
+    background-color: #FFDE59;
+    color: #312B59;
+    font-weight: 300;
+}
+
+.have{
+    font-size: 0.7rem;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 10px;
+
+}
+
+.have:hover{
+    font-weight: 600;
+    color: red;
+}
+
+.userInput{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 5px;
+    padding: 5px;
+    
+}
+
+.userInput label{
+    display: flex;
+    justify-content: space-between;
+}
+
+label input{
+    justify-self: flex-end;
+    padding: 6px;
+    border-radius: 7%;
+    height: min-content;
+    margin-left: 20px;
+}
+
+.message{
+    font-size: 0.5rem;
+    font-weight: 300;
+}
+
+
+
+@media(max-width:800px){
+    #header h1{
+        font-size: 2.5rem;
+    }
+
+
+    .button-container{
+        transform: scale(0.9);
+        margin-top: 50px;
+    
+    }
+
+    .register-block{
+        transform: scale(0.8);
+    }
+
+}
+
+
+@media(max-width:320px){
+    #header h1{
+        font-size: 2.5rem;
+    }
+
+
+    .button-container{
+        transform: scale(0.7);
+        margin-top: 50px;
+    
+    }
+
+    .register-block{
+        transform: scale(0.55);
+    }
+
+}

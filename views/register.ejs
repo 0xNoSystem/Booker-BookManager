@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/rl.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+    
+
+    <main>
+        <div class="login">
+            <div class="button-container">
+                <a  href="/login"><button id="login-butt">Login</button></a>
+                <button id="register-butt">Register</button>
+            </div>
+        </div>
+        <div class="container">
+            
+            
+            <div id="header">
+                <h1>BOOKER</h1>
+                <h3>Your Book Manager</h3>
+            </div>
+            <form class="register-block" action="/register" method="post">
+                <div>
+                    <h2>Register</h2>
+                </div>
+                <div>
+                    <div class="userInput">
+                        <label><p>E-mail</p>  
+                            <input class="email input" type="email" name="username" required>
+                        </label>
+                        
+                    </div>
+
+                    <div class="userInput" >
+                        <label><p>Password</p>
+                            <input id='pass1' type="password" name="password" minlength="6" required>
+                        
+                    </label>
+                        <p class="message">==</p>
+                        
+                    </div>
+                    <div class="userInput">
+                        <label><p>Re-Password </p>
+                            <input id='pass2' type="password" name="password2" minlength="6" required>
+                            
+                        </label>
+                        <p class="message">==</p>
+                        
+                    </div>
+                    <a  href="/login"><p class="have">Already have an account ?</p></a>
+                    <div class="submit-butt">
+                        <input id="submitRegister" type="submit" >
+                    </div>
+                    </div>
+            </form>
+        </div>
+    </main>
+    
+</body>
+<script src="/regScript.js"></script>
+
+
+</html>

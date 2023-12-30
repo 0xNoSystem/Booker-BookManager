@@ -1,3 +1,2 @@
 node_modules
-scssStyleCode
-package-lock.json
+.env
