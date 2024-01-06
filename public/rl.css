@@ -32,7 +32,7 @@ main{
 
 .register-block{
     color: #312B59;
-    width: max-content;
+    width: 70%;
     display: flex;
     flex-direction: column;
     background-color:  #FFDE59;
@@ -43,6 +43,70 @@ main{
     padding-bottom: 20px;
     border-radius: 5%;
     transform: scale(0.8);
+}
+
+.register-2way{
+    display: grid;
+    grid-template-columns: 45% 10% 45%;
+    grid-template-rows: 100%;
+    column-gap: 20px;
+
+}
+
+.standard-register{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#or{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+    height: 100%;
+}
+
+#or div{
+    position: relative;
+    bottom: 16%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color:#312B59;
+    text-align: center;
+    color: aliceblue;
+    font-weight: bolder;
+}
+.oauth-register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#google{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: white;
+    padding-right: 10px;
+    position: relative;
+    bottom: 16%;
+    border-color: #312B59;
+    border-radius: 2%;
+    
+}
+
+#google img{
+margin-right: 10px;
+padding: 10px;
 }
 
 .email{
@@ -73,7 +137,7 @@ main{
     box-shadow: 1px 1px 1px 1px grey;
     font-weight: 600;
     height: 30px;
-    margin-left: 10px;
+    margin-right: 15%;
 }
 
 .submit-butt input:hover{
@@ -204,8 +268,19 @@ label input{
 
     .register-block{
         transform: scale(0.8);
+        width: 35%;
     }
 
+
+    .register-2way{
+        display: grid;
+        
+        grid-template-rows: 65% 5% 30%;
+        grid-template-columns: 100%;
+        row-gap: 30px;
+        padding-bottom: 20px;
+    }
+    
 }
 
 
