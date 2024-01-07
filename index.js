@@ -54,7 +54,7 @@ passport.serializeUser(function(user, done) {
 passport.use(new GoogleStrategy({
     clientID:     process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/home",
+    callbackURL: "https://booker-library-manager-9d73c454908c.herokuapp.com/home",
     passReqToCallback   : true
   },
   function(request, accessToken, refreshToken, profile, done) {
