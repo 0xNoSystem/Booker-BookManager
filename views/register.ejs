@@ -25,41 +25,63 @@
                 <h1>BOOKER</h1>
                 <h3>Your Book Manager</h3>
             </div>
-            <form class="register-block" action="/register" method="post">
+
+            <div class="register-block" action="/register" method="post">
                 <div>
                     <h2>Register</h2>
                 </div>
-                <div>
-                    <div class="userInput">
-                        <label><p>E-mail</p>  
-                            <input class="email input" type="email" name="username" required>
-                        </label>
-                        
-                    </div>
+            
+                <div class="register-2way">
 
-                    <div class="userInput" >
-                        <label><p>Password</p>
-                            <input id='pass1' type="password" name="password" minlength="6" required>
+                    <form class="standard-register" action="/register" method="post">
+
+                        <div class="userInput">
+                            <label><p>E-mail</p>  
+                                <input class="email input" type="email" name="username" required>
+                            </label>
                         
-                    </label>
-                        <p class="message">==</p>
-                        
-                    </div>
-                    <div class="userInput">
-                        <label><p>Re-Password </p>
-                            <input id='pass2' type="password" name="password2" minlength="6" required>
+                        </div>
+
+                        <div class="userInput" >
+                            <label><p>Password</p>
+                                <input id='pass1' type="password" name="password" minlength="6" required>
                             
-                        </label>
-                        <p class="message">==</p>
+                            </label>
+                            <p class="message">==</p>
+                            
+                        </div>
+
+                        <div class="userInput">
+                            <label><p>Re-Password </p>
+                                <input id='pass2' type="password" name="password2" minlength="6" required>
+                                
+                            </label>
+                            <p class="message">==</p>
+                            
+                        </div>
+
+                        <a  href="/login"><p class="have">Already have an account ?</p></a>
+                        <div class="submit-butt">
+                            <input id="submitRegister" type="submit" >
+                        </div>
+                    </form>
+                    <div id="or">
+                        <div>OR</div>
+                    </div>
+                    <div class=oauth-register>
                         
-                    </div>
-                    <a  href="/login"><p class="have">Already have an account ?</p></a>
-                    <div class="submit-butt">
-                        <input id="submitRegister" type="submit" >
-                    </div>
-                    </div>
-            </form>
+                            <button class="social" onclick="location.href='/auth/google'" >
+                            <img class="w-6 h-6" src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo" width="36px" height="36px">
+                            <p>Sign up with Google</p>
+                            </button>
+                        
+
+                </div>
+            </div>
         </div>
+        
+        
+    </div>
     </main>
     
 </body>

@@ -1,12 +1,13 @@
 import mongoose from 'mongoose'
 import passportLocalMongoose from 'passport-local-mongoose'
+import findOrCreate from 'mongoose-findorcreate'
 
 const ObjectId = mongoose.Types.ObjectId;
 
 const userSchema = new mongoose.Schema({
     
 	username: {type: String},
-
+  googleId: {type: String},
 	books:[
 		{book_id:{type:ObjectId, ref:'books'},
 		 currently_reading: Boolean,
@@ -81,6 +82,7 @@ userSchema.methods.loggedIn = async function(){
 }
 
 userSchema.plugin(passportLocalMongoose)
+userSchema.plugin(findOrCreate);
 
 
 const bookSchema = new mongoose.Schema({

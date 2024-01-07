@@ -25,33 +25,52 @@
                 <h1>BOOKER</h1>
                 <h3>Your Book Manager</h3>
             </div>
-            <form class="register-block" action="/login" method="post">
+            <div class="register-block">
                 <div>
                     <h2>Log In</h2>
                 </div>
-                <div>
-                    <div class="userInput">
-                        <label><p>E-mail</p>  
-                            <input class="email input" type="email" name="username" required>
-                        </label>
-                        
-                    </div>
+                <div class="register-2way">
+                        <form class="standard-register"  action="/login" method="post">
+                            <div class="userInput">
+                                <label><p>E-mail</p>  
+                                    <input class="email input" type="email" name="username" required>
+                                </label>
+                                
+                            </div>
 
-                    <div class="userInput" >
-                        <label><p>Password</p>
-                            <input id='pass1' type="password" name="password" minlength="6" required>
-                        
-                    </label>
-                        
-                        
-                    </div>
+                            <div class="userInput" >
+                                <label><p>Password</p>
+                                    <input id='pass1' type="password" name="password" minlength="6" required>
+                                
+                            </label>
+                                
+                                
+                            </div>
+                            
+                            <a href="/register"><p class="have">Don't have a Booker account yet?</p></a>
+                            <div class="submit-butt">
+                                <input id="submitRegister" type="submit" >
+                            </div>
                     
-                    <a href="/register"><p class="have">Don't have a Booker account yet?</p></a>
-                    <div class="submit-butt">
-                        <input id="submitRegister" type="submit" >
+                        </form>
+                        
+                        <div id="or">
+                            <div>OR</div>
+                        </div>
+
+                        <div class=oauth-register>
+                            
+                                <button class="social" onclick="location.href='/auth/google'" >
+                                    <img class="w-6 h-6" src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo" width="36px" height="36px">
+                                    <p>Log In with Google</p>
+                                </button>
+
+                                
+                            
+    
+                        </div>
                     </div>
-                    </div>
-            </form>
+                </div>
         </div>
     </main>
     

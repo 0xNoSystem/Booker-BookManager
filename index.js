@@ -6,6 +6,7 @@ import session from 'express-session'
 import passport from 'passport'
 import {Book, User,Note} from './my_modules/db.js'
 import { getBooks, getBook, getNotes, calc_averageRating, getAuthors, searchBooks_db, addBookToUser } from './my_modules/operations.js'
+import { Strategy as GoogleStrategy } from 'passport-google-oauth2';
 
 
 const ObjectId = mongoose.Types.ObjectId;
@@ -49,6 +50,27 @@ passport.serializeUser(function(user, done) {
     });
 });
 
+
+passport.use(new GoogleStrategy({
+    clientID:     process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    callbackURL: "http://localhost:3000/auth/google/home",
+    passReqToCallback   : true
+  },
+  function(request, accessToken, refreshToken, profile, done) {
+    
+    User.findOrCreate({ googleId: profile.id, username: profile.email }, function (err, user) {
+      return done(err, user);
+    });
+  }
+));
+
+
+app.get('/auth/google',
+  passport.authenticate('google', { scope:
+      ['profile', 'email'] }
+));
+
 app.get('/', (req,res)=>{
     
     if (req.isAuthenticated()){
@@ -57,6 +79,12 @@ app.get('/', (req,res)=>{
         res.redirect('/login')
     }
 })
+
+app.get( '/auth/google/home',
+    passport.authenticate( 'google', {
+        successRedirect: '/home',
+        failureRedirect: '/register'
+}));
 
 app.get('/register', (req,res)=>{
     try{
@@ -204,7 +232,7 @@ app.post('/add/:id', async (req,res)=>{
 app.post('/edit/:id',async (req,res)=>{
     if (req.isAuthenticated()){
         const bookId = req.params.id;
-        console.log(bookId);
+        
         if (req.body.rating){
         const rating = req.body.rating;
         
