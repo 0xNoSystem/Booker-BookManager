@@ -34,6 +34,8 @@ main{
     color: #312B59;
     width: 70%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     background-color:  #FFDE59;
     box-shadow: 1px 1px 1px 1px #313131;
@@ -45,7 +47,13 @@ main{
     transform: scale(0.8);
 }
 
+.register-block div>h2{
+    margin-top: 5px;
+    padding-bottom: 30px;
+}
+
 .register-2way{
+    width: fit-content;
     display: grid;
     grid-template-columns: 45% 10% 45%;
     grid-template-rows: 100%;
@@ -103,6 +111,7 @@ main{
     bottom: 16%;
     border-color: aliceblue;
     border-radius: 2%;
+    
     
 }
 
@@ -270,23 +279,27 @@ label input{
 
     .register-block{
         transform: scale(0.8);
-        width: 35%;
+        width:45%;
     }
 
 
     .register-2way{
         display: grid;
-        
+        height: 70%;
         grid-template-rows: 65% 5% 30%;
         grid-template-columns: 100%;
-        row-gap: 30px;
+        row-gap: 50px;
         padding-bottom: 20px;
+    }
+
+    .social{
+        margin-bottom: 30px
     }
     
 }
 
 
-@media(max-width:320px){
+@media(max-width:540px){
     #header h1{
         font-size: 2.5rem;
     }
@@ -299,7 +312,8 @@ label input{
     }
 
     .register-block{
-        transform: scale(0.55);
+        transform: scale(0.7);
+        width: 70%;
     }
 
 }
