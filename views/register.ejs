@@ -26,14 +26,14 @@
                 <h3>Your Book Manager</h3>
             </div>
 
-            <form class="register-block" action="/register" method="post">
+            <div class="register-block" action="/register" method="post">
                 <div>
                     <h2>Register</h2>
                 </div>
             
                 <div class="register-2way">
 
-                    <div class="standard-register">
+                    <form class="standard-register" action="/register" method="post">
 
                         <div class="userInput">
                             <label><p>E-mail</p>  
@@ -64,20 +64,20 @@
                         <div class="submit-butt">
                             <input id="submitRegister" type="submit" >
                         </div>
-                    </div>
+                    </form>
                     <div id="or">
                         <div>OR</div>
                     </div>
                     <div class=oauth-register>
-                        <button id="google">
-                        <img class="w-6 h-6" src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo" width="50px" height="50px">
-                        <p>Sign up with Google</p>
-                        </button>
-
-                    </div>
+                        
+                            <button class="social" onclick="location.href='/auth/google'" >
+                            <img class="w-6 h-6" src="https://www.svgrepo.com/show/475656/google-color.svg" loading="lazy" alt="google logo" width="36px" height="36px">
+                            <p>Sign up with Google</p>
+                            </button>
+                        
 
                 </div>
-            </form>
+            </div>
         </div>
         
         

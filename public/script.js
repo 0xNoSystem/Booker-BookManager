@@ -110,7 +110,7 @@ newNoteButton.addEventListener('click',function(){
 
 
     const header = document.createElement('h2');
-    header.innerHTML = `${svgString_x} <h5>New Note</h5> `
+    header.innerHTML = `${svgString_x} New Note(0/255)`
 
     
     const formElement = document.createElement('form');

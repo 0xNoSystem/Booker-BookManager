@@ -36,12 +36,12 @@ main{
     display: flex;
     flex-direction: column;
     background-color:  #FFDE59;
-    box-shadow: 5px 5px 5px 2px grey;
+    box-shadow: 1px 1px 1px 1px #313131;
     padding-left: 70px;
     padding-right: 70px;
     padding-top: 20px;
     padding-bottom: 20px;
-    border-radius: 5%;
+    border-radius: 1.2%;
     transform: scale(0.8);
 }
 
@@ -85,12 +85,14 @@ main{
 }
 .oauth-register{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 }
 
 
-#google{
+.social{
+    margin-top: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,14 +101,14 @@ main{
     padding-right: 10px;
     position: relative;
     bottom: 16%;
-    border-color: #312B59;
+    border-color: aliceblue;
     border-radius: 2%;
     
 }
 
-#google img{
+.social img{
 margin-right: 10px;
-padding: 10px;
+padding: 7px;
 }
 
 .email{
