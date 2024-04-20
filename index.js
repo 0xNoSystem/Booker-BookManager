@@ -132,25 +132,26 @@ if (req.isAuthenticated()){
 
 app.get('/book/:id', async (req,res)=>{
     if (req.isAuthenticated()){
-    const bookId = req.params.id;
-    const userId = req.user['_id'];
-
-    const notes = await getNotes(userId, bookId, Note);
+        const bookId = req.params.id;
+        const userId = req.user['_id'];
     
-    const bookToRender = await getBook(bookId, userId, User, Book)
-    if (bookToRender !== undefined){
-    res.render('book.ejs',{
-        book: bookToRender,
-        notes: notes
-    }
-        )}else{
-            res.redirect('/home');
+        const notes = await getNotes(userId, bookId, Note);
+        
+        const bookToRender = await getBook(bookId, userId, User, Book);
+        
+        if (bookToRender !== undefined){
+        res.render('book.ejs',{
+            book: bookToRender,
+            notes: notes
         }
-
-    }else{
-        res.redirect('/')
-    }
-})
+            )}else{
+                res.redirect('/home');
+            }
+    
+        }else{
+            res.redirect('/')
+        }
+    })
 
 app.get('/logout', (req,res)=>{
     req.logout(function(err) {
@@ -280,10 +281,10 @@ app.post('/delete/:noteId',async (req,res)=>{
             await Note.deleteOne({"_id":noteId});
             
         }catch(err){
-        console.error(err);
-        res.redirect(`/book/${bookId}`)
+            console.error(err);
+            res.redirect(`/book/${bookId}`)
         }
-        res.redirect(`/book/${bookId}`);
+        res.redirect(`/book/${bookId}`)
     }else{
         res.redirect('/login')
     }
